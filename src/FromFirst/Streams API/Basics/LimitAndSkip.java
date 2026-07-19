@@ -6,7 +6,9 @@ class Main {
         List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50, 60, 70);
         List<Integer> firstThree = numbers.stream().limit(3).collect(Collectors.toList());
         List<Integer> lastThree = numbers.stream().skip(4).collect(Collectors.toList());
+        List<Integer> indexTwoToFive = numbers.stream().skip(2).limit(4).collect(Collectors.toList());
         System.out.println(firstThree);
         System.out.println(lastThree);
+        System.out.println(indexTwoToFive);
     }
 }
