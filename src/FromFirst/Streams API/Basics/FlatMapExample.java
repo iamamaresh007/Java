@@ -10,5 +10,11 @@ class Main {
         
         List<String> output = departments.stream().flatMap(list -> list.stream()).collect(Collectors.toList());
         System.out.println(output);
+        
+        
+        List<String> sentences = Arrays.asList("Java Spring", "Docker Kubernetes", "Kafka Redis");
+        
+        List<String> output2 = sentences.stream().flatMap(sentence -> Arrays.stream(sentence.split(" "))).collect(Collectors.toList());
+        System.out.println(output2);
     }
 }
