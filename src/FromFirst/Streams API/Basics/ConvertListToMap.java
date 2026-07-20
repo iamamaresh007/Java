@@ -9,5 +9,11 @@ class Main {
         //In Java Streams, Function.identity() is a static utility method that returns a function that always returns its exact input argument.
         //static <T> Function<T, T> identity() { return t -> t; }
         System.out.println(result);
+
+        List<String> names = Arrays.asList("John", "Jack", "David","James");
+        Map<Character, String> result = names.stream().collect(Collectors.toMap(name -> name.charAt(0), Function.identity(), (existing, replacement) -> replacement));
+        System.out.println(result);
+        //Output : {D=David, J=James}
+        //Notice: John, Jack, and James all produce the same key (J).David produces D.
     }
 }
